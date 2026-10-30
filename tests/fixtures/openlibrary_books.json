@@ -1,0 +1,114 @@
+{
+ "run_id": "cmvkspaee0uhy41o5r2n1qphb",
+ "slug": "openlibrary_books",
+ "version": "1.1.0",
+ "status": "done",
+ "input": {
+  "query": "dune herbert",
+  "max_results": 2
+ },
+ "count": 2,
+ "partial": false,
+ "finished_at": "2026-10-23T09:56:40.651Z",
+ "results": [
+  {
+   "url": "https://openlibrary.org/works/OL893414W",
+   "isbn": "9780340839935",
+   "rank": 1,
+   "pages": 608,
+   "title": "Dune",
+   "rating": 4.3,
+   "authors": [
+    "Frank Herbert"
+   ],
+   "work_id": "OL893414W",
+   "editions": 155,
+   "read_url": "https://archive.org/details/isbn_9780340765906",
+   "subjects": [
+    "Dune (Imaginary place)",
+    "Fiction",
+    "Fiction, science fiction, general",
+    "Dune (imaginary place), fiction",
+    "New York Times reviewed",
+    "Science fiction",
+    "Science-fiction",
+    "American literature",
+    "nyt:mass-market-monthly=2021-11-07",
+    "New York Times bestseller"
+   ],
+   "subtitle": null,
+   "cover_url": "https://covers.openlibrary.org/b/id/11481354-M.jpg",
+   "languages": [
+    "heb",
+    "dut",
+    "rum",
+    "rus",
+    "por"
+   ],
+   "author_ids": [
+    "OL79034A"
+   ],
+   "publishers": [
+    "Berkley",
+    "Berkley Books",
+    "Berkley T2706"
+   ],
+   "ebook_access": "borrowable",
+   "ratings_count": 448,
+   "cover_url_large": "https://covers.openlibrary.org/b/id/11481354-L.jpg",
+   "already_read_count": 729,
+   "first_publish_year": 1965,
+   "want_to_read_count": 3443
+  },
+  {
+   "url": "https://openlibrary.org/works/OL893461W",
+   "isbn": "9788466372015",
+   "rank": 2,
+   "pages": 279,
+   "title": "Dune Messiah",
+   "rating": 3.94,
+   "authors": [
+    "Frank Herbert"
+   ],
+   "work_id": "OL893461W",
+   "editions": 101,
+   "read_url": "https://archive.org/details/dune20000herb",
+   "subjects": [
+    "American Science fiction",
+    "Dune (Imaginary place)",
+    "Fiction",
+    "Imaginary places",
+    "Science Fiction",
+    "Translations into Russian",
+    "Novela",
+    "Dune (Lugar imaginario)",
+    "Lectures et morceaux choisis",
+    "Anglais (langue)"
+   ],
+   "subtitle": null,
+   "cover_url": "https://covers.openlibrary.org/b/id/980253-M.jpg",
+   "languages": [
+    "spa",
+    "pol",
+    "dut",
+    "tur",
+    "und"
+   ],
+   "author_ids": [
+    "OL79034A"
+   ],
+   "publishers": [
+    "Orion Publishing Group, Limited",
+    "Putnam",
+    "Putnam Adult"
+   ],
+   "ebook_access": "borrowable",
+   "ratings_count": 143,
+   "cover_url_large": "https://covers.openlibrary.org/b/id/980253-L.jpg",
+   "already_read_count": 259,
+   "first_publish_year": 1969,
+   "want_to_read_count": 575
+  }
+ ],
+ "_note": "Real run of 2026-10-23 (279 works matched); both rows kept as delivered."
+}

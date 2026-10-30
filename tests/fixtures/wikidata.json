@@ -1,0 +1,42 @@
+{
+ "run_id": "cmvksp99m0uhw41o55sxvrudl",
+ "slug": "wikidata",
+ "version": "1.1.0",
+ "status": "done",
+ "input": {
+  "query": "Leonardo da Vinci",
+  "max_results": 2
+ },
+ "count": 2,
+ "partial": false,
+ "finished_at": "2026-10-23T09:56:35.059Z",
+ "results": [
+  {
+   "id": "Q762",
+   "url": "https://www.wikidata.org/wiki/Q762",
+   "rank": 1,
+   "label": "Leonardo da Vinci",
+   "aliases": [],
+   "matched": "Leonardo da Vinci",
+   "match_type": "label",
+   "concept_uri": "http://www.wikidata.org/entity/Q762",
+   "description": "Italian Renaissance polymath (1452−1519)",
+   "wikipedia_url": "https://en.wikipedia.org/wiki/Leonardo_da_Vinci",
+   "wikipedia_title": "Leonardo da Vinci"
+  },
+  {
+   "id": "Q2530641",
+   "url": "https://www.wikidata.org/wiki/Q2530641",
+   "rank": 2,
+   "label": "Leonardo da Vinci",
+   "aliases": [],
+   "matched": "Leonardo da Vinci",
+   "match_type": "label",
+   "concept_uri": "http://www.wikidata.org/entity/Q2530641",
+   "description": "1911 Conte di Cavour-class battleship",
+   "wikipedia_url": "https://en.wikipedia.org/wiki/Italian_battleship_Leonardo_da_Vinci",
+   "wikipedia_title": "Italian battleship Leonardo da Vinci"
+  }
+ ],
+ "_note": "Real run of 2026-10-23 without include_details; both entities kept as delivered."
+}

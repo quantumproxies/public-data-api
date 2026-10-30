@@ -1,0 +1,81 @@
+{
+ "run_id": "cmvksojwh0uhg41o52891cwh9",
+ "slug": "openalex",
+ "version": "1.1.0",
+ "status": "done",
+ "input": {
+  "query": "large language models",
+  "max_results": 2
+ },
+ "count": 2,
+ "partial": false,
+ "finished_at": "2026-10-23T09:56:01.862Z",
+ "results": [
+  {
+   "id": "W4384561707",
+   "doi": "10.1038/s41591-023-02448-8",
+   "url": "https://openalex.org/W4384561707",
+   "fwci": 132.762,
+   "issn": "1078-8956",
+   "rank": 2,
+   "type": "article",
+   "year": 2023,
+   "field": "Medicine",
+   "issue": "8",
+   "pages": "1930-1940",
+   "title": "Large language models in medicine",
+   "topic": "Artificial Intelligence in Healthcare and Education",
+   "venue": "Nature Medicine",
+   "oa_url": "https://www.repository.cam.ac.uk/handle/1810/349830",
+   "volume": "29",
+   "authors": [
+    "Arun James Thirunavukarasu",
+    "Darren Shu Jeng Ting",
+    "Kabilan Elangovan",
+    "Laura Gutiérrez",
+    "Ting Fang Tan",
+    "Daniel Shu Wei Ting"
+   ],
+   "license": "cc-by",
+   "pdf_url": null,
+   "abstract": null,
+   "keywords": [
+    "large language models",
+    "ChatGPT",
+    "generative AI",
+    "AI chatbots",
+    "clinical applications of AI",
+    "fine-tuning",
+    "clinical teaching",
+    "medical research"
+   ],
+   "language": "en",
+   "countries": [
+    "GB",
+    "SG",
+    "US"
+   ],
+   "oa_status": "green",
+   "venue_type": "journal",
+   "author_count": 6,
+   "institutions": [
+    "University of Cambridge",
+    "University of Nottingham",
+    "National University of Singapore",
+    "Singapore National Eye Center",
+    "SingHealth Duke-NUS Academic Medical Centre",
+    "Singapore Eye Research Institute",
+    "Birmingham and Midland Eye Centre",
+    "Duke-NUS Medical School",
+    "University of Birmingham",
+    "Stanford University"
+   ],
+   "is_retracted": false,
+   "cited_by_count": 3865,
+   "is_open_access": true,
+   "publication_date": "2023-07-17",
+   "referenced_works_count": 95
+  }
+ ],
+ "_note": "Real run of 2026-10-23; one of the two works is kept (rank 2), as delivered. Author names are kept as published on the paper."
+}

@@ -1,0 +1,74 @@
+{
+ "run_id": "cmvksoksm0uhk41o5fipz3g12",
+ "slug": "clinical_trials",
+ "version": "1.1.0",
+ "status": "done",
+ "input": {
+  "query": "cancer immunotherapy",
+  "status": "RECRUITING",
+  "max_results": 2
+ },
+ "count": 2,
+ "partial": false,
+ "finished_at": "2026-10-23T09:56:02.718Z",
+ "results": [
+  {
+   "sex": "ALL",
+   "url": "https://clinicaltrials.gov/study/NCT05961761",
+   "rank": 1,
+   "title": "Propranolol and Pembrolizumab in Advanced Soft Tissue Sarcoma Patients",
+   "nct_id": "NCT05961761",
+   "phases": [
+    "PHASE2"
+   ],
+   "status": "RECRUITING",
+   "acronym": "PROPANE",
+   "masking": "NONE",
+   "sponsor": "Niels J.",
+   "summary": "The goal of this phase 2 clinical trial is to test efficacy and tolerability of combining propranolol and pembrolizumab in patients with advanced angiosarcoma or undifferentiated pleomorphic sarcoma.",
+   "countries": [
+    "Denmark",
+    "Norway",
+    "Sweden"
+   ],
+   "allocation": "NA",
+   "conditions": [
+    "Soft Tissue Sarcoma Adult",
+    "Angiosarcoma",
+    "Undifferentiated Pleomorphic Sarcoma"
+   ],
+   "enrollment": 80,
+   "start_date": "2021-08-17",
+   "study_type": "INTERVENTIONAL",
+   "has_results": false,
+   "maximum_age": null,
+   "minimum_age": "18 Years",
+   "first_posted": "2023-07-27",
+   "last_updated": "2023-07-27",
+   "collaborators": [
+    "Aarhus University Hospital",
+    "Oslo University Hospital",
+    "Karolinska University Hospital"
+   ],
+   "interventions": [
+    "Propranolol",
+    "Pembrolizumab"
+   ],
+   "sponsor_class": "OTHER",
+   "official_title": "An Open Label Phase 2 Study on Propranolol and Pembrolizumab in Advanced Angiosarcoma and Undifferentiated Pleomorphic Sarcoma - a Scandinavian Sarcoma Group Collaboration",
+   "completion_date": "2028-12",
+   "enrollment_type": "ESTIMATED",
+   "locations_count": 4,
+   "primary_purpose": "TREATMENT",
+   "primary_outcomes": [
+    "Progression-free survival rate"
+   ],
+   "healthy_volunteers": false,
+   "intervention_types": [
+    "DRUG"
+   ],
+   "primary_completion_date": "2028-01"
+  }
+ ],
+ "_note": "Real run of 2026-10-23 (2,208 studies matched); one of the two studies is kept, its summary cut after the first sentence. The lead sponsor is an individual investigator, so the name is shortened to first name and last initial."
+}

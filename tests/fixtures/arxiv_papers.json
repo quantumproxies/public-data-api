@@ -1,0 +1,69 @@
+{
+ "run_id": "cmvksoj9d0uhe41o5h9k6eevh",
+ "slug": "arxiv_papers",
+ "version": "1.1.0",
+ "status": "done",
+ "input": {
+  "query": "retrieval augmented generation",
+  "max_results": 2
+ },
+ "count": 2,
+ "partial": false,
+ "finished_at": "2026-10-23T09:56:00.640Z",
+ "results": [
+  {
+   "doi": null,
+   "url": "https://arxiv.org/abs/2506.06962v3",
+   "rank": 1,
+   "title": "AR-RAG: Autoregressive Retrieval Augmentation for Image Generation",
+   "authors": [
+    "Jingyuan Qi",
+    "Zhiyang Xu",
+    "Qifan Wang",
+    "Lifu Huang"
+   ],
+   "comment": "Image Generation, Retrieval Augmented Generation",
+   "pdf_url": "https://arxiv.org/pdf/2506.06962v3",
+   "updated": "2025-06-14T00:40:34Z",
+   "version": 3,
+   "abstract": "We introduce Autoregressive Retrieval Augmentation (AR-RAG), a novel paradigm that enhances image generation by autoregressively incorporating knearest neighbor retrievals at the patch level.",
+   "arxiv_id": "2506.06962v3",
+   "published": "2025-06-08T01:33:05Z",
+   "categories": [
+    "cs.CV"
+   ],
+   "journal_ref": null,
+   "author_count": 4,
+   "primary_category": "cs.CV"
+  },
+  {
+   "doi": null,
+   "url": "https://arxiv.org/abs/2411.18583v1",
+   "rank": 2,
+   "title": "Automated Literature Review Using NLP Techniques and LLM-Based Retrieval-Augmented Generation",
+   "authors": [
+    "Nurshat Fateh Ali",
+    "Md. Mahdi Mohtasim",
+    "Shakil Mosharrof",
+    "T. Gopi Krishna"
+   ],
+   "comment": "Key Words : T5, SpaCy, Large Language Model, GPT, ROUGE, Literature Review, Natural Language Processing, Retrieval-augmented generation",
+   "pdf_url": "https://arxiv.org/pdf/2411.18583v1",
+   "updated": "2024-11-27T18:27:07Z",
+   "version": 1,
+   "abstract": "This research presents and compares multiple approaches to automate the generation of literature reviews using several Natural Language Processing (NLP) techniques and retrieval-augmented generation (RAG) with a Large Language Model (LLM).",
+   "arxiv_id": "2411.18583v1",
+   "published": "2024-11-27T18:27:07Z",
+   "categories": [
+    "cs.CL",
+    "cs.AI",
+    "cs.IR",
+    "cs.LG"
+   ],
+   "journal_ref": null,
+   "author_count": 4,
+   "primary_category": "cs.CL"
+  }
+ ],
+ "_note": "Real run of 2026-10-23 (8,796 papers matched); both rows kept, abstracts cut after the first sentence. Author names are kept as published on the papers."
+}

@@ -1,0 +1,612 @@
+{
+ "cli": "public-data",
+ "name": "Public Data API",
+ "version": "0.1.0",
+ "description": "Public data API for Python and the command line: arXiv and OpenAlex papers, clinical trials, openFDA adverse events, World Bank indicators, weather, Wikipedia, Wikidata, Open Library books and NVD CVEs in one client, with one sign-in and the same JSON or CSV rows. Free and open source; runs on your QuanticData account.",
+ "links": {
+  "repo": "https://github.com/quantumproxies/public-data-api",
+  "page": "https://quanticdata.io/collectors/arxiv-api/?utm_source=github&utm_medium=cli&utm_campaign=public-data-api",
+  "billing": "https://app.quanticdata.io/billing?utm_source=github&utm_medium=cli&utm_campaign=public-data-api",
+  "pricing": "https://quanticdata.io/pricing/?utm_source=github&utm_medium=cli&utm_campaign=public-data-api"
+ },
+ "commands": [
+  {
+   "name": "arxiv",
+   "collector": "arxiv_papers",
+   "method": "arxiv",
+   "help": "arXiv preprint search",
+   "description": "Preprint search on arXiv — abstracts, authors, categories and PDF links.",
+   "positional": "query",
+   "positional_is_list": false,
+   "positional_optional": false,
+   "columns": [
+    "arxiv_id",
+    "published",
+    "primary_category",
+    "author_count",
+    "title"
+   ],
+   "sample": "arxiv_papers",
+   "inputs": [
+    {
+     "name": "query",
+     "type": "string",
+     "required": true,
+     "description": "Free text, e.g. \"retrieval augmented generation\", or arXiv field syntax such as ti:diffusion.",
+     "arg": "query"
+    },
+    {
+     "name": "category",
+     "type": "string",
+     "required": false,
+     "description": "Subject class, e.g. cs.AI, cs.CL or stat.ML.",
+     "arg": "category"
+    },
+    {
+     "name": "sort",
+     "type": "string",
+     "required": false,
+     "description": "Result order.",
+     "enum": [
+      "relevance",
+      "latest",
+      "updated"
+     ],
+     "default": "relevance",
+     "arg": "sort"
+    },
+    {
+     "name": "max_results",
+     "type": "integer",
+     "required": false,
+     "description": "How many papers to deliver at most (1–100). You pay only for delivered papers.",
+     "min": 1,
+     "max": 100,
+     "default": 25,
+     "arg": "max_results"
+    }
+   ]
+  },
+  {
+   "name": "papers",
+   "collector": "openalex",
+   "method": "papers",
+   "help": "scholarly works from OpenAlex",
+   "description": "Scholarly works from OpenAlex: title, authors, year, citations, DOI, venue, open-access link, abstract, topic and institutions.",
+   "positional": "query",
+   "positional_is_list": false,
+   "positional_optional": false,
+   "columns": [
+    "year",
+    "cited_by_count",
+    "venue",
+    "is_open_access",
+    "title"
+   ],
+   "sample": "openalex",
+   "inputs": [
+    {
+     "name": "query",
+     "type": "string",
+     "required": true,
+     "description": "Search terms across title, abstract and metadata.",
+     "arg": "query"
+    },
+    {
+     "name": "year_from",
+     "type": "integer",
+     "required": false,
+     "description": "Only works published this year or later.",
+     "min": 1800,
+     "max": 2100,
+     "arg": "year_from"
+    },
+    {
+     "name": "year_to",
+     "type": "integer",
+     "required": false,
+     "description": "Only works published up to this year.",
+     "min": 1500,
+     "max": 2100,
+     "arg": "year_to"
+    },
+    {
+     "name": "open_access",
+     "type": "boolean",
+     "required": false,
+     "description": "Only works with a free full text.",
+     "default": false,
+     "arg": "open_access"
+    },
+    {
+     "name": "sort",
+     "type": "string",
+     "required": false,
+     "description": "relevance (default), cited (most cited first) or newest.",
+     "enum": [
+      "relevance",
+      "cited",
+      "newest"
+     ],
+     "default": "relevance",
+     "arg": "sort"
+    },
+    {
+     "name": "max_results",
+     "type": "integer",
+     "required": false,
+     "description": "How many works to deliver at most (1–200). You pay only for delivered works.",
+     "min": 1,
+     "max": 200,
+     "default": 25,
+     "arg": "max_results"
+    }
+   ]
+  },
+  {
+   "name": "trials",
+   "collector": "clinical_trials",
+   "method": "trials",
+   "help": "ClinicalTrials.gov studies",
+   "description": "Studies from ClinicalTrials.gov — status, phase, conditions, interventions, sponsor.",
+   "positional": "query",
+   "positional_is_list": false,
+   "positional_optional": true,
+   "columns": [
+    "nct_id",
+    "status",
+    "phases",
+    "sponsor",
+    "enrollment",
+    "title"
+   ],
+   "sample": "clinical_trials",
+   "inputs": [
+    {
+     "name": "query",
+     "type": "string",
+     "required": false,
+     "description": "Free-text search term: a drug, disease or sponsor, e.g. \"cancer immunotherapy\".",
+     "arg": "query"
+    },
+    {
+     "name": "condition",
+     "type": "string",
+     "required": false,
+     "description": "Restrict to a medical condition.",
+     "arg": "condition"
+    },
+    {
+     "name": "status",
+     "type": "string",
+     "required": false,
+     "description": "Recruitment status filter.",
+     "enum": [
+      "RECRUITING",
+      "NOT_YET_RECRUITING",
+      "ACTIVE_NOT_RECRUITING",
+      "COMPLETED",
+      "ENROLLING_BY_INVITATION",
+      "SUSPENDED",
+      "TERMINATED",
+      "WITHDRAWN"
+     ],
+     "arg": "status"
+    },
+    {
+     "name": "max_results",
+     "type": "integer",
+     "required": false,
+     "description": "How many studies to deliver at most (1–200). You pay only for delivered studies.",
+     "min": 1,
+     "max": 200,
+     "default": 20,
+     "arg": "max_results"
+    }
+   ]
+  },
+  {
+   "name": "fda",
+   "collector": "openfda",
+   "method": "fda",
+   "help": "FDA adverse-event reports from openFDA",
+   "description": "Drug adverse-event reports from the FDA FAERS database — drugs, reactions, seriousness.",
+   "positional": "query",
+   "positional_is_list": false,
+   "positional_optional": false,
+   "columns": [
+    "report_id",
+    "received_date",
+    "serious",
+    "suspect_drugs",
+    "reactions"
+   ],
+   "sample": "openfda",
+   "inputs": [
+    {
+     "name": "query",
+     "type": "string",
+     "required": true,
+     "description": "A drug name, e.g. ibuprofen, or an openFDA field:value query.",
+     "arg": "query"
+    },
+    {
+     "name": "max_results",
+     "type": "integer",
+     "required": false,
+     "description": "How many reports to deliver at most (1–500). You pay only for delivered reports.",
+     "min": 1,
+     "max": 500,
+     "default": 50,
+     "arg": "max_results"
+    }
+   ]
+  },
+  {
+   "name": "worldbank",
+   "collector": "world_bank",
+   "method": "worldbank",
+   "help": "World Bank indicators per country and year",
+   "description": "World Bank development indicators per country and year, by indicator code: GDP, population, inflation and the rest of the World Bank catalog.",
+   "positional": "indicator",
+   "positional_is_list": false,
+   "positional_optional": false,
+   "columns": [
+    "country",
+    "country_code",
+    "year",
+    "value",
+    "indicator_name"
+   ],
+   "sample": "world_bank",
+   "inputs": [
+    {
+     "name": "indicator",
+     "type": "string",
+     "required": true,
+     "description": "World Bank indicator code, e.g. NY.GDP.MKTP.CD (GDP in current US$) or SP.POP.TOTL (population).",
+     "arg": "indicator"
+    },
+    {
+     "name": "countries",
+     "type": "string[]",
+     "required": true,
+     "description": "Country codes, ISO2 or ISO3, e.g. IT DE, or WLD for the world.",
+     "arg": "countries"
+    },
+    {
+     "name": "year_from",
+     "type": "integer",
+     "required": false,
+     "description": "First year (default: all).",
+     "min": 1960,
+     "max": 2100,
+     "arg": "year_from"
+    },
+    {
+     "name": "year_to",
+     "type": "integer",
+     "required": false,
+     "description": "Last year (default: latest).",
+     "min": 1960,
+     "max": 2100,
+     "arg": "year_to"
+    },
+    {
+     "name": "include_empty",
+     "type": "boolean",
+     "required": false,
+     "description": "Keep rows whose value is null.",
+     "default": false,
+     "arg": "include_empty"
+    },
+    {
+     "name": "max_results",
+     "type": "integer",
+     "required": false,
+     "description": "How many datapoints to deliver at most (1–200). You pay only for delivered datapoints.",
+     "min": 1,
+     "max": 200,
+     "default": 50,
+     "arg": "max_results"
+    }
+   ]
+  },
+  {
+   "name": "weather",
+   "collector": "weather_forecast",
+   "method": "weather",
+   "help": "daily weather forecast and recent history by place",
+   "description": "Daily weather for a place name or coordinates, from Open-Meteo: conditions, temperatures, precipitation, wind, UV, sunshine, sunrise and sunset, up to 16 days ahead and 92 days back.",
+   "positional": "location",
+   "positional_is_list": false,
+   "positional_optional": true,
+   "columns": [
+    "date",
+    "weather",
+    "temp_max_c",
+    "temp_min_c",
+    "precipitation_mm",
+    "wind_max_kmh"
+   ],
+   "sample": "weather_forecast",
+   "inputs": [
+    {
+     "name": "location",
+     "type": "string",
+     "required": false,
+     "description": "City or place name, e.g. Rome.",
+     "arg": "location"
+    },
+    {
+     "name": "latitude",
+     "type": "number",
+     "required": false,
+     "description": "Exact latitude (skips geocoding).",
+     "min": -90,
+     "max": 90,
+     "arg": "latitude"
+    },
+    {
+     "name": "longitude",
+     "type": "number",
+     "required": false,
+     "description": "Exact longitude.",
+     "min": -180,
+     "max": 180,
+     "arg": "longitude"
+    },
+    {
+     "name": "days",
+     "type": "integer",
+     "required": false,
+     "description": "Days ahead, 1 to 16 (default 7).",
+     "min": 1,
+     "max": 16,
+     "default": 7,
+     "arg": "days"
+    },
+    {
+     "name": "past_days",
+     "type": "integer",
+     "required": false,
+     "description": "Days of recent history to add before the forecast, 0 to 92 (default 0).",
+     "min": 0,
+     "max": 92,
+     "default": 0,
+     "arg": "past_days"
+    },
+    {
+     "name": "max_results",
+     "type": "integer",
+     "required": false,
+     "description": "How many days to deliver at most (1–30). You pay only for delivered days.",
+     "min": 1,
+     "max": 30,
+     "default": 16,
+     "arg": "max_results"
+    }
+   ]
+  },
+  {
+   "name": "wikipedia",
+   "collector": "wikipedia_articles",
+   "method": "wikipedia",
+   "help": "Wikipedia article summaries by search or title",
+   "description": "Wikipedia article summaries, by search query or exact titles, in any language edition: lead extract, short description, images, Wikidata id, coordinates and last edit.",
+   "positional": "query",
+   "positional_is_list": false,
+   "positional_optional": true,
+   "columns": [
+    "title",
+    "description",
+    "word_count",
+    "wikidata_id",
+    "last_modified"
+   ],
+   "sample": "wikipedia_articles",
+   "inputs": [
+    {
+     "name": "query",
+     "type": "string",
+     "required": false,
+     "description": "Search Wikipedia and read the top results, e.g. \"web scraping\". Use this or --titles.",
+     "arg": "query"
+    },
+    {
+     "name": "titles",
+     "type": "string[]",
+     "required": false,
+     "description": "Exact article titles or /wiki/ URLs to read, e.g. \"Web scraping\". Use this or QUERY.",
+     "arg": "titles"
+    },
+    {
+     "name": "lang",
+     "type": "string",
+     "required": false,
+     "description": "Wikipedia language edition (en, it, de…). Default en.",
+     "arg": "lang"
+    },
+    {
+     "name": "max_results",
+     "type": "integer",
+     "required": false,
+     "description": "How many articles to deliver at most (1–50). You pay only for delivered articles.",
+     "min": 1,
+     "max": 50,
+     "default": 10,
+     "arg": "max_results"
+    }
+   ]
+  },
+  {
+   "name": "wikidata",
+   "collector": "wikidata",
+   "method": "wikidata",
+   "help": "Wikidata entities for a name",
+   "description": "Resolve a name to a stable Wikidata entity id — the join key for entity linking.",
+   "positional": "query",
+   "positional_is_list": false,
+   "positional_optional": false,
+   "columns": [
+    "id",
+    "label",
+    "description",
+    "match_type",
+    "wikipedia_title"
+   ],
+   "sample": "wikidata",
+   "inputs": [
+    {
+     "name": "query",
+     "type": "string",
+     "required": true,
+     "description": "Name or term to resolve, e.g. \"Leonardo da Vinci\".",
+     "arg": "query"
+    },
+    {
+     "name": "lang",
+     "type": "string",
+     "required": false,
+     "description": "Language for labels/descriptions (default en).",
+     "arg": "lang"
+    },
+    {
+     "name": "include_details",
+     "type": "boolean",
+     "required": false,
+     "description": "Also read instance-of, country, official website, coordinates and image for each entity.",
+     "default": false,
+     "arg": "include_details"
+    },
+    {
+     "name": "max_results",
+     "type": "integer",
+     "required": false,
+     "description": "How many entities to deliver at most (1–50). You pay only for delivered entities.",
+     "min": 1,
+     "max": 50,
+     "default": 10,
+     "arg": "max_results"
+    }
+   ]
+  },
+  {
+   "name": "books",
+   "collector": "openlibrary_books",
+   "method": "books",
+   "help": "Open Library book search",
+   "description": "Book search over the Open Library catalog — ISBN, authors, ratings, covers.",
+   "positional": "query",
+   "positional_is_list": false,
+   "positional_optional": false,
+   "columns": [
+    "title",
+    "authors",
+    "first_publish_year",
+    "isbn",
+    "rating",
+    "editions"
+   ],
+   "sample": "openlibrary_books",
+   "inputs": [
+    {
+     "name": "query",
+     "type": "string",
+     "required": true,
+     "description": "Title or author words, e.g. \"dune herbert\", or author:, isbn:, subject: syntax.",
+     "arg": "query"
+    },
+    {
+     "name": "sort",
+     "type": "string",
+     "required": false,
+     "description": "Result order.",
+     "enum": [
+      "relevance",
+      "new",
+      "old",
+      "rating"
+     ],
+     "default": "relevance",
+     "arg": "sort"
+    },
+    {
+     "name": "max_results",
+     "type": "integer",
+     "required": false,
+     "description": "How many books to deliver at most (1–100). You pay only for delivered books.",
+     "min": 1,
+     "max": 100,
+     "default": 25,
+     "arg": "max_results"
+    }
+   ]
+  },
+  {
+   "name": "cve",
+   "collector": "nvd_cve",
+   "method": "cve",
+   "help": "CVE records from the NIST NVD",
+   "description": "Vulnerabilities from the NIST NVD — CVE id, description, CVSS score, severity, CWE.",
+   "positional": "keyword",
+   "positional_is_list": false,
+   "positional_optional": true,
+   "columns": [
+    "cve_id",
+    "severity",
+    "cvss_score",
+    "published",
+    "known_exploited"
+   ],
+   "sample": "nvd_cve",
+   "inputs": [
+    {
+     "name": "keyword",
+     "type": "string",
+     "required": false,
+     "description": "Search term: a product, vendor or words of the CVE text, e.g. log4j.",
+     "arg": "keyword"
+    },
+    {
+     "name": "severity",
+     "type": "string",
+     "required": false,
+     "description": "Filter to a CVSS v3 severity.",
+     "enum": [
+      "LOW",
+      "MEDIUM",
+      "HIGH",
+      "CRITICAL"
+     ],
+     "arg": "severity"
+    },
+    {
+     "name": "cve_id",
+     "type": "string",
+     "required": false,
+     "description": "Look up one CVE, e.g. CVE-2021-44228.",
+     "arg": "cve_id"
+    },
+    {
+     "name": "known_exploited",
+     "type": "boolean",
+     "required": false,
+     "description": "Only CVEs in the CISA Known Exploited Vulnerabilities catalog.",
+     "default": false,
+     "arg": "known_exploited"
+    },
+    {
+     "name": "max_results",
+     "type": "integer",
+     "required": false,
+     "description": "How many CVEs to deliver at most (1–200). You pay only for delivered CVEs.",
+     "min": 1,
+     "max": 200,
+     "default": 20,
+     "arg": "max_results"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,59 @@
+{
+ "run_id": "cmvksolfy0uhm41o57q1rb0sa",
+ "slug": "openfda",
+ "version": "1.2.1",
+ "status": "done",
+ "input": {
+  "query": "ibuprofen",
+  "max_results": 2
+ },
+ "count": 2,
+ "partial": false,
+ "finished_at": "2026-10-23T09:56:06.096Z",
+ "results": [
+  {
+   "rank": 1,
+   "drugs": [
+    "IBUPROFEN"
+   ],
+   "country": "US",
+   "serious": true,
+   "reporter": "consumer",
+   "reactions": [
+    "Dyspepsia",
+    "Renal impairment"
+   ],
+   "report_id": "10003301",
+   "drug_roles": [
+    "suspect"
+   ],
+   "brand_names": [
+    "IBUPROFEN",
+    "CAREONE IBUPROFEN"
+   ],
+   "indications": [
+    "PRODUCT USED FOR UNKNOWN INDICATION"
+   ],
+   "patient_age": null,
+   "patient_sex": "female",
+   "report_type": "1",
+   "generic_names": [
+    "IBUPROFEN",
+    "IBUPROFEN CAPSULES 200 MG"
+   ],
+   "latest_update": "2014-02-28",
+   "received_date": "2014-02-28",
+   "suspect_drugs": [
+    "IBUPROFEN"
+   ],
+   "serious_reasons": [
+    "other medically important"
+   ],
+   "patient_age_years": null,
+   "patient_weight_kg": null,
+   "reaction_outcomes": [],
+   "manufacturer_report_id": "US-JNJFOC-20130719067"
+  }
+ ],
+ "_note": "Real run of 2026-10-23 (218,702 reports matched); one of the two reports is kept, as delivered. FAERS reports are published without patient identity."
+}
